@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2f364f;
+}
+
+.box {
+  width: 640px;
+  height: 360px;
+  display: flex;
+  background: transparent;
+  transform: rotate(-25deg) skew(25deg);
+  transition: 0.5s;
+}
+
+.box:hover {
+  transform: rotate(-25deg) skew(-25deg) translateY(-10px);
+}
+
+.box span {
+  width: 25%;
+  height: 100%;
+  display: block;
+  background: url(mountains-55067__340.webp);
+  background-size: cover;
+  background-position: calc(-160px * var(--i));
+  border-top: 5px solid rgb(0, 0, 0);
+  border-bottom: 5px solid rgb(0, 0, 0);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.box:hover span:nth-child(odd) {
+  transform: skewY(25deg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.box:hover span:nth-child(even) {
+  transform: skewY(-25deg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+}
